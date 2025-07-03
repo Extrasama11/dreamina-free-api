@@ -3,7 +3,7 @@ import _ from "lodash";
 import APIException from "@/lib/exceptions/APIException.ts";
 import EX from "@/api/consts/exceptions.ts";
 import util from "@/lib/util.ts";
-import { getCredit, receiveCredit, request } from "./core.ts";
+import { getCredit, request } from "./core.ts";
 import logger from "@/lib/logger.ts";
 
 const DEFAULT_ASSISTANT_ID = "513695";
