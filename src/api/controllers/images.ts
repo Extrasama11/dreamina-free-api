@@ -41,9 +41,7 @@ export async function generateImages(
   const model = getModel(_model);
   logger.info(`使用模型: ${_model} 映射模型: ${model} ${width}x${height} 精细度: ${sampleStrength}`);
 
-  const { totalCredit } = await getCredit(refreshToken);
-  if (totalCredit <= 0)
-    await receiveCredit(refreshToken);
+  
 
   const componentId = util.uuid();
   const { aigc_data } = await request(
