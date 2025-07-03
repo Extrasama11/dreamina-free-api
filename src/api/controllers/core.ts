@@ -111,24 +111,7 @@ export async function getCredit(refreshToken: string) {
   }
 }
 
-/**
- * 接收今日积分
- *
- * @param refreshToken 用于刷新access_token的refresh_token
- */
-export async function receiveCredit(refreshToken: string) {
-  logger.info("正在收取今日积分...")
-  const { cur_total_credits, receive_quota  } = await request("POST", "https://commerce-api-sg.capcut.com/commerce/v1/benefits/credit_receive", refreshToken, {
-    data: {
-      time_zone: "Asia/Shanghai"
-    },
-    headers: {
-      Referer: "https://dreamina.capcut.com/ai-tool/image/generate"
-    }
-  });
-  logger.info(`\n今日${receive_quota}积分收取成功\n剩余积分: ${cur_total_credits}`);
-  return cur_total_credits;
-}
+
 
 /**
  * 请求jimeng
